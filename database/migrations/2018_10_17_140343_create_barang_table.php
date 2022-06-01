@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTopikTable extends Migration
+class CreateBarangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ class CreateTopikTable extends Migration
      */
     public function up()
     {
-        Schema::create('topik', function (Blueprint $table) {
-            $table->increments('id_topik');
-            $table->string('nama_topik');
-            $table->string('harga');
-            $table->string('nama_pengajar');
+        Schema::create('barang', function (Blueprint $table) {
+            $table->increments('id_barang');
+            $table->string('nama_barang');
+            $table->string('merk_barang');
+            $table->string('warna');
+            $table->integer('harga');
+            $table->integer('jumlah_stok');
+            $table->integer('sisa');
+            $table->text('img_url_barang');
+
             $table->timestamps();
         });
     }
